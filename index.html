@@ -3,194 +3,1362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shanghai City — местный городской портал</title>
+
+<title>Мехробод — местный портал махалли</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#172033}
-header{background:#111827;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:24px;font-weight:bold}
-nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
-.lang button{border:0;border-radius:8px;padding:7px 9px;margin-left:3px;cursor:pointer}
-.hero{padding:70px 6%;background:linear-gradient(135deg,#172033,#374151);color:white}
-.hero h1{font-size:44px;margin:0 0 15px}
-.hero p{font-size:18px;max-width:650px;line-height:1.6}
-.search{margin-top:25px;display:flex;max-width:650px}
-.search input{flex:1;padding:15px;border:0;border-radius:10px 0 0 10px;font-size:16px}
-.search button{padding:15px 22px;border:0;background:#f59e0b;color:white;border-radius:0 10px 10px 0}
-section{padding:45px 6%}
-h2{font-size:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
-.card{background:white;border-radius:14px;padding:22px;box-shadow:0 4px 15px #00000012}
-.card h3{margin-top:0}
-.category{font-size:18px;text-align:center}
-.event,.news{background:white;padding:20px;border-radius:12px;margin:12px 0}
-.contact{background:#172033;color:white;text-align:center;padding:50px 6%}
-footer{background:#0b1220;color:#aaa;text-align:center;padding:25px}
-@media(max-width:700px){
-header{flex-direction:column;align-items:flex-start}
-nav a{display:inline-block;margin:5px 4px}
-.hero h1{font-size:34px}
-.search{flex-direction:column}
-.search input,.search button{border-radius:8px;margin:3px 0}
+
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#061522;
+color:white;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:#071827;
+border-bottom:1px solid #20394d;
+padding:14px 5%;
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+.logo{
+font-size:23px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+.logo small{
+display:block;
+font-size:11px;
+color:#8fa6b8;
+margin-top:3px;
+}
+
+nav{
+display:flex;
+gap:20px;
+flex:1;
+justify-content:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#24a0ff;
+}
+
+.lang button{
+background:#10283b;
+border:1px solid #31516a;
+color:white;
+padding:7px 10px;
+border-radius:7px;
+cursor:pointer;
+}
+
+.lang button:hover{
+background:#087cff;
+}
+
+
+/* HERO */
+
+.hero{
+
+min-height:560px;
+
+display:flex;
+align-items:center;
+
+padding:70px 6%;
+
+background:
+linear-gradient(
+90deg,
+rgba(2,17,30,.92),
+rgba(2,17,30,.55),
+rgba(2,17,30,.15)
+),
+
+url("mehrobod-hero.jpg");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:760px;
+}
+
+.location{
+font-size:18px;
+line-height:1.6;
+}
+
+.location span{
+color:#ffb21a;
+}
+
+.hero h1{
+font-size:62px;
+margin:20px 0 10px;
+}
+
+.hero p{
+font-size:21px;
+line-height:1.5;
+color:#e4edf4;
+}
+
+.search{
+display:flex;
+max-width:700px;
+margin-top:25px;
+}
+
+.search input{
+flex:1;
+padding:17px;
+font-size:16px;
+border:0;
+border-radius:10px 0 0 10px;
+}
+
+.search button{
+padding:17px 28px;
+border:0;
+background:#087cff;
+color:white;
+font-weight:bold;
+border-radius:0 10px 10px 0;
+cursor:pointer;
+}
+
+
+/* CONTENT */
+
+.container{
+width:92%;
+max-width:1200px;
+margin:auto;
+}
+
+section{
+padding:55px 0;
+}
+
+h2{
+font-size:30px;
+}
+
+
+/* CATEGORIES */
+
+.categories{
+margin-top:-40px;
+position:relative;
+
+background:#091d30;
+
+border:1px solid #28445a;
+
+border-radius:15px;
+
+padding:18px;
+
+display:grid;
+
+grid-template-columns:
+repeat(8,1fr);
+
+gap:10px;
+}
+
+.category{
+text-align:center;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.category:hover{
+background:#12324c;
+}
+
+.category-icon{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.category div:last-child{
+font-size:13px;
+}
+
+
+/* CARDS */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+}
+
+.card{
+
+background:#f7f9fb;
+
+color:#142536;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+}
+
+.card-photo{
+
+height:200px;
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+}
+
+.popular{
+
+position:absolute;
+
+top:12px;
+left:12px;
+
+background:#19bd60;
+
+padding:7px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+}
+
+.card-body{
+padding:18px;
+}
+
+.card h3{
+margin:0 0 8px;
+font-size:20px;
+}
+
+.rating{
+color:#f2a400;
+font-weight:bold;
+}
+
+.info{
+color:#66798a;
+font-size:13px;
+line-height:1.7;
+margin:10px 0;
+}
+
+.tags{
+display:flex;
+gap:6px;
+flex-wrap:wrap;
+}
+
+.tag{
+
+background:#e8f0f6;
+
+padding:5px 9px;
+
+border-radius:20px;
+
+font-size:11px;
+
+color:#50677a;
+}
+
+
+/* BUTTONS */
+
+.buttons{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-top:15px;
+}
+
+.btn{
+
+padding:11px;
+
+border-radius:8px;
+
+text-align:center;
+
+text-decoration:none;
+
+font-weight:bold;
+
+font-size:13px;
+
+cursor:pointer;
+}
+
+.call{
+
+background:#16bd5b;
+
+color:white;
+
+border:0;
+}
+
+.route{
+
+background:white;
+
+border:1px solid #087cff;
+
+color:#087cff;
+}
+
+
+/* EVENTS */
+
+.events{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+}
+
+.panel{
+
+background:#091d30;
+
+border:1px solid #29475d;
+
+border-radius:15px;
+
+padding:20px;
+}
+
+.event{
+
+padding:15px 0;
+
+border-bottom:1px solid #244055;
+}
+
+.event:last-child{
+border:0;
+}
+
+.event h3{
+margin:0 0 6px;
+}
+
+.event p{
+color:#9db2c2;
+font-size:13px;
+}
+
+
+/* GUIDE */
+
+.guide{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+}
+
+.guide-card{
+
+height:210px;
+
+border-radius:15px;
+
+overflow:hidden;
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+align-items:end;
+
+padding:20px;
+
+position:relative;
+}
+
+.guide-card:after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,0,0,.85)
+);
+}
+
+.guide-card div{
+
+position:relative;
+
+z-index:2;
+}
+
+.guide-card h3{
+margin:0 0 5px;
+}
+
+.guide-card p{
+margin:0;
+color:#d6e2eb;
+font-size:13px;
+}
+
+
+/* CONTACT */
+
+.contact{
+
+background:#071b2c;
+
+text-align:center;
+
+padding:60px 5%;
+}
+
+.contact button{
+
+background:#087cff;
+
+border:0;
+
+color:white;
+
+padding:14px 25px;
+
+border-radius:8px;
+
+font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:#020c15;
+
+padding:35px 5%;
+
+color:#8fa6b8;
+
+text-align:center;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.categories{
+
+grid-template-columns:
+repeat(4,1fr);
+
+}
+
+.cards{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.events{
+
+grid-template-columns:1fr;
+
+}
+
+.guide{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+min-height:600px;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.search{
+flex-direction:column;
+gap:7px;
+}
+
+.search input,
+.search button{
+border-radius:8px;
+}
+
+.categories{
+
+grid-template-columns:
+repeat(4,1fr);
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.guide{
+
+grid-template-columns:1fr;
+
+}
+
+header{
+padding:12px 4%;
+}
+
+}
+
+
+/* NOTIFICATION */
+
+#message{
+
+position:fixed;
+
+bottom:20px;
+
+left:50%;
+
+transform:
+translateX(-50%);
+
+background:#16334b;
+
+padding:14px 20px;
+
+border-radius:10px;
+
+display:none;
+
+z-index:999;
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
-<div class="logo">🏙️ Shanghai City</div>
+
+<div class="logo">
+
+🏙️ Мехробод
+
+<small>Местный портал махалли</small>
+
+</div>
+
 
 <nav>
+
 <a href="#places">Заведения</a>
+
 <a href="#events">События</a>
+
 <a href="#news">Новости</a>
+
 <a href="#guide">Туристический гид</a>
+
 <a href="#contacts">Контакты</a>
+
 </nav>
 
+
 <div class="lang">
-<button onclick="setLang('ru')">RU</button>
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('tj')">TJ</button>
+
+<button onclick="language('ru')">RU</button>
+
+<button onclick="language('en')">EN</button>
+
+<button onclick="language('tj')">TJ</button>
+
 </div>
+
 </header>
 
+
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+
 <section class="hero">
-<h1 id="title">Shanghai City</h1>
-<p id="subtitle">
-Местный городской портал: заведения, события, новости и полезная информация.
+
+<div class="hero-content">
+
+<div class="location">
+
+📍 <span>Согдийская область</span><br>
+
+Джаббор Расулов район<br>
+
+посёлок Мехробод
+
+</div>
+
+
+<h1>Мехробод</h1>
+
+
+<p id="description">
+
+Местный портал махалли — всё самое важное рядом!
+
 </p>
 
+
 <div class="search">
-<input id="searchInput" placeholder="Найти заведение, событие или новость">
-<button onclick="searchSite()">Поиск</button>
+
+<input
+
+id="search"
+
+placeholder="Найти заведение, событие или новость"
+
+>
+
+<button onclick="searchSite()">
+
+Поиск
+
+</button>
+
 </div>
+
+</div>
+
 </section>
+
+
+
+<main class="container">
+
+
+<!-- КАТЕГОРИИ -->
 
 <section id="places">
-<h2>🏪 Заведения</h2>
 
-<div class="grid">
-<div class="card category">🍽️ Рестораны</div>
-<div class="card category">☕ Кафе</div>
-<div class="card category">🍔 Фастфуд</div>
-<div class="card category">🍕 Пиццерии</div>
-<div class="card category">☕ Кофейни</div>
-<div class="card category">🏨 Отели</div>
-<div class="card category">🛍️ Магазины</div>
-<div class="card category">💇 Красота</div>
+<div class="categories">
+
+<div class="category">
+
+<div class="category-icon">🍽️</div>
+
+<div>Рестораны</div>
+
 </div>
 
-<h2>Популярные места</h2>
 
-<div class="grid">
+<div class="category">
+
+<div class="category-icon">☕</div>
+
+<div>Кафе</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">🍔</div>
+
+<div>Фастфуд</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">🍕</div>
+
+<div>Пиццерии</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">☕</div>
+
+<div>Кофейни</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">🏨</div>
+
+<div>Отели</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">🛍️</div>
+
+<div>Магазины</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-icon">💇</div>
+
+<div>Красота</div>
+
+</div>
+
+</div>
+
+
+
+<h2>🔥 Популярные заведения</h2>
+
+
+<div class="cards">
+
+
+<!-- ЗАВЕДЕНИЕ 1 -->
+
 <div class="card">
-<h3>🍕 City Pizza</h3>
-<p>Пицца, доставка и семейные ужины.</p>
-<p>📍 Shanghai City</p>
+
+<div
+
+class="card-photo"
+
+style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80')">
+
+<div class="popular">
+
+Популярное
+
 </div>
 
-<div class="card">
-<h3>☕ City Coffee</h3>
-<p>Кофе, десерты и уютная атмосфера.</p>
-<p>📍 Shanghai City</p>
 </div>
 
+
+<div class="card-body">
+
+<h3>Ресторан «Мехробод»</h3>
+
+<div class="rating">
+
+★ 4.8
+
+</div>
+
+<div class="info">
+
+📍 Посёлок Мехробод<br>
+
+🕒 Ежедневно 10:00–23:00
+
+</div>
+
+<div class="tags">
+
+<span class="tag">Ресторан</span>
+
+<span class="tag">Узбекская кухня</span>
+
+<span class="tag">Семейный</span>
+
+</div>
+
+
+<div class="buttons">
+
+<a
+
+class="btn call"
+
+href="tel:+992XXXXXXXXX">
+
+☎ Позвонить
+
+</a>
+
+
+<a
+
+class="btn route"
+
+target="_blank"
+
+href="https://www.google.com/maps/search/?api=1&query=Мехробод">
+
+➤ Маршрут
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ЗАВЕДЕНИЕ 2 -->
+
 <div class="card">
-<h3>🍔 City Burger</h3>
-<p>Бургеры и быстрая еда.</p>
-<p>📍 Shanghai City</p>
+
+<div
+
+class="card-photo"
+
+style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80')">
+
+<div class="popular">
+
+Популярное
+
 </div>
+
 </div>
+
+
+<div class="card-body">
+
+<h3>Кафе «Coffee Time»</h3>
+
+<div class="rating">
+
+★ 4.7
+
+</div>
+
+<div class="info">
+
+📍 Посёлок Мехробод<br>
+
+🕒 Ежедневно 08:00–22:00
+
+</div>
+
+<div class="tags">
+
+<span class="tag">Кофе</span>
+
+<span class="tag">Десерты</span>
+
+<span class="tag">Wi-Fi</span>
+
+</div>
+
+
+<div class="buttons">
+
+<a
+
+class="btn call"
+
+href="tel:+992XXXXXXXXX">
+
+☎ Позвонить
+
+</a>
+
+
+<a
+
+class="btn route"
+
+target="_blank"
+
+href="https://www.google.com/maps/search/?api=1&query=Мехробод">
+
+➤ Маршрут
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ЗАВЕДЕНИЕ 3 -->
+
+<div class="card">
+
+<div
+
+class="card-photo"
+
+style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80')">
+
+<div class="popular">
+
+Популярное
+
+</div>
+
+</div>
+
+
+<div class="card-body">
+
+<h3>«Real Burger»</h3>
+
+<div class="rating">
+
+★ 4.6
+
+</div>
+
+<div class="info">
+
+📍 Посёлок Мехробод<br>
+
+🕒 Ежедневно 10:00–00:00
+
+</div>
+
+<div class="tags">
+
+<span class="tag">Бургеры</span>
+
+<span class="tag">Фастфуд</span>
+
+<span class="tag">Доставка</span>
+
+</div>
+
+
+<div class="buttons">
+
+<a
+
+class="btn call"
+
+href="tel:+992XXXXXXXXX">
+
+☎ Позвонить
+
+</a>
+
+
+<a
+
+class="btn route"
+
+target="_blank"
+
+href="https://www.google.com/maps/search/?api=1&query=Мехробод">
+
+➤ Маршрут
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+
+<!-- СОБЫТИЯ -->
 
 <section id="events">
-<h2>🎉 События</h2>
+
+<h2>📅 Ближайшие события</h2>
+
+
+<div class="events">
+
+
+<div class="panel">
+
 
 <div class="event">
-<h3>Городской праздник</h3>
-<p>Информация о ближайших мероприятиях Shanghai City.</p>
+
+<h3>🎉 Городской праздник</h3>
+
+<p>
+
+📍 Посёлок Мехробод<br>
+
+Следите за датой проведения.
+
+</p>
+
 </div>
+
 
 <div class="event">
-<h3>Музыкальный вечер</h3>
-<p>Следите за новыми событиями нашего района.</p>
+
+<h3>🎵 Музыкальный вечер</h3>
+
+<p>
+
+📍 Мехробод<br>
+
+Информация появится здесь.
+
+</p>
+
 </div>
+
+
+<div class="event">
+
+<h3>🏆 Спортивное мероприятие</h3>
+
+<p>
+
+📍 Мехробод<br>
+
+Скоро будет опубликована информация.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="panel" id="news">
+
+<h3>📰 Новости Мехробода</h3>
+
+<p>
+
+Здесь будут публиковаться местные новости,
+
+важные объявления и события махалли.
+
+</p>
+
+<hr>
+
+<h3>📢 Объявления</h3>
+
+<p>
+
+Новые объявления будут появляться здесь.
+
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<section id="news">
-<h2>📰 Новости</h2>
 
-<div class="news">
-<h3>Новости Shanghai City</h3>
-<p>Здесь будут публиковаться местные новости и важные объявления.</p>
-</div>
 
-<div class="news">
-<h3>Что нового в районе?</h3>
-<p>Новые заведения, мероприятия и полезная информация.</p>
-</div>
-</section>
+<!-- ГИД -->
 
 <section id="guide">
+
 <h2>🗺️ Туристический гид</h2>
 
-<div class="grid">
-<div class="card">
+
+<div class="guide">
+
+
+<div
+
+class="guide-card"
+
+style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+
+<h3>🏔️ Природа</h3>
+
+<p>
+
+Красивые места Согдийской области
+
+</p>
+
+</div>
+
+</div>
+
+
+<div
+
+class="guide-card"
+
+style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+
+<h3>🏛️ История</h3>
+
+<p>
+
+Культура и история нашего края
+
+</p>
+
+</div>
+
+</div>
+
+
+<div
+
+class="guide-card"
+
+style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+
 <h3>📍 Интересные места</h3>
-<p>Места, которые стоит посетить.</p>
+
+<p>
+
+Места, которые стоит посетить
+
+</p>
+
 </div>
 
-<div class="card">
-<h3>🍴 Где поесть</h3>
-<p>Рестораны, кафе и другие заведения.</p>
 </div>
 
-<div class="card">
-<h3>🏨 Где остановиться</h3>
-<p>Отели и варианты размещения.</p>
+
 </div>
-</div>
+
 </section>
 
-<section id="contacts" class="contact">
-<h2>📞 Контакты</h2>
-<p>Хотите добавить своё заведение, событие или новость?</p>
-<p>Свяжитесь с администрацией Shanghai City.</p>
+
+</main>
+
+
+
+<!-- КОНТАКТЫ -->
+
+<section class="contact" id="contacts">
+
+<h2>📞 Добавить заведение</h2>
+
+<p>
+
+Хотите добавить своё заведение,
+
+событие или новость?
+
+</p>
+
+<button onclick="contactAdmin()">
+
+Связаться с администрацией
+
+</button>
+
 </section>
+
+
 
 <footer>
-<p>© 2026 Shanghai City</p>
-<p>Местный городской портал</p>
+
+🏙️ <b>Мехробод</b>
+
+<br><br>
+
+Местный портал махалли
+
+<br><br>
+
+📍 Согдийская область,
+
+Джаббор Расулов район,
+
+посёлок Мехробод
+
+<br><br>
+
+© 2026 Мехробод
+
 </footer>
 
+
+<div id="message"></div>
+
+
+
 <script>
-function searchSite(){
-let text=document.getElementById("searchInput").value;
-if(text.trim()===""){
-alert("Введите запрос для поиска");
-}else{
-alert("Поиск: "+text);
-}
+
+
+function showMessage(text){
+
+let box=document.getElementById("message");
+
+box.innerText=text;
+
+box.style.display="block";
+
+setTimeout(function(){
+
+box.style.display="none";
+
+},2500);
+
 }
 
-function setLang(lang){
+
+function searchSite(){
+
+let text=document
+.getElementById("search")
+.value
+.trim();
+
+if(text===""){
+
+showMessage("Введите запрос");
+
+return;
+
+}
+
+showMessage("Поиск: "+text);
+
+}
+
+
+function contactAdmin(){
+
+window.location.href=
+
+"mailto:mehrobod.portal@gmail.com?subject=Добавить заведение";
+
+}
+
+
+function language(lang){
+
+let description=
+document.getElementById("description");
+
 if(lang==="ru"){
-document.getElementById("title").innerText="Shanghai City";
-document.getElementById("subtitle").innerText="Местный городской портал: заведения, события, новости и полезная информация.";
+
+description.innerText=
+
+"Местный портал махалли — всё самое важное рядом!";
+
 }
+
 if(lang==="en"){
-document.getElementById("title").innerText="Shanghai City";
-document.getElementById("subtitle").innerText="Local city portal: places, events, news and useful information.";
+
+description.innerText=
+
+"Local mahalla portal — everything important is nearby!";
+
 }
+
 if(lang==="tj"){
-document.getElementById("title").innerText="Shanghai City";
-document.getElementById("subtitle").innerText="Портали маҳаллӣ: ҷойҳо, чорабиниҳо, хабарҳо ва маълумоти муфид.";
+
+description.innerText=
+
+"Портали маҳалла — ҳама маълумоти муҳим дар наздикии шумо!";
+
 }
+
 }
+
 </script>
 
+
 </body>
-</html>
+  </html>
