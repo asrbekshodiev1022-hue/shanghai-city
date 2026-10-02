@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanghai City — местный городской портал</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#172033}
+header{background:#111827;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:24px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:0 8px;font-size:14px}
+.lang button{border:0;border-radius:8px;padding:7px 9px;margin-left:3px;cursor:pointer}
+.hero{padding:70px 6%;background:linear-gradient(135deg,#172033,#374151);color:white}
+.hero h1{font-size:44px;margin:0 0 15px}
+.hero p{font-size:18px;max-width:650px;line-height:1.6}
+.search{margin-top:25px;display:flex;max-width:650px}
+.search input{flex:1;padding:15px;border:0;border-radius:10px 0 0 10px;font-size:16px}
+.search button{padding:15px 22px;border:0;background:#f59e0b;color:white;border-radius:0 10px 10px 0}
+section{padding:45px 6%}
+h2{font-size:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+.card{background:white;border-radius:14px;padding:22px;box-shadow:0 4px 15px #00000012}
+.card h3{margin-top:0}
+.category{font-size:18px;text-align:center}
+.event,.news{background:white;padding:20px;border-radius:12px;margin:12px 0}
+.contact{background:#172033;color:white;text-align:center;padding:50px 6%}
+footer{background:#0b1220;color:#aaa;text-align:center;padding:25px}
+@media(max-width:700px){
+header{flex-direction:column;align-items:flex-start}
+nav a{display:inline-block;margin:5px 4px}
+.hero h1{font-size:34px}
+.search{flex-direction:column}
+.search input,.search button{border-radius:8px;margin:3px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🏙️ Shanghai City</div>
+
+<nav>
+<a href="#places">Заведения</a>
+<a href="#events">События</a>
+<a href="#news">Новости</a>
+<a href="#guide">Туристический гид</a>
+<a href="#contacts">Контакты</a>
+</nav>
+
+<div class="lang">
+<button onclick="setLang('ru')">RU</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('tj')">TJ</button>
+</div>
+</header>
+
+<section class="hero">
+<h1 id="title">Shanghai City</h1>
+<p id="subtitle">
+Местный городской портал: заведения, события, новости и полезная информация.
+</p>
+
+<div class="search">
+<input id="searchInput" placeholder="Найти заведение, событие или новость">
+<button onclick="searchSite()">Поиск</button>
+</div>
+</section>
+
+<section id="places">
+<h2>🏪 Заведения</h2>
+
+<div class="grid">
+<div class="card category">🍽️ Рестораны</div>
+<div class="card category">☕ Кафе</div>
+<div class="card category">🍔 Фастфуд</div>
+<div class="card category">🍕 Пиццерии</div>
+<div class="card category">☕ Кофейни</div>
+<div class="card category">🏨 Отели</div>
+<div class="card category">🛍️ Магазины</div>
+<div class="card category">💇 Красота</div>
+</div>
+
+<h2>Популярные места</h2>
+
+<div class="grid">
+<div class="card">
+<h3>🍕 City Pizza</h3>
+<p>Пицца, доставка и семейные ужины.</p>
+<p>📍 Shanghai City</p>
+</div>
+
+<div class="card">
+<h3>☕ City Coffee</h3>
+<p>Кофе, десерты и уютная атмосфера.</p>
+<p>📍 Shanghai City</p>
+</div>
+
+<div class="card">
+<h3>🍔 City Burger</h3>
+<p>Бургеры и быстрая еда.</p>
+<p>📍 Shanghai City</p>
+</div>
+</div>
+</section>
+
+<section id="events">
+<h2>🎉 События</h2>
+
+<div class="event">
+<h3>Городской праздник</h3>
+<p>Информация о ближайших мероприятиях Shanghai City.</p>
+</div>
+
+<div class="event">
+<h3>Музыкальный вечер</h3>
+<p>Следите за новыми событиями нашего района.</p>
+</div>
+</section>
+
+<section id="news">
+<h2>📰 Новости</h2>
+
+<div class="news">
+<h3>Новости Shanghai City</h3>
+<p>Здесь будут публиковаться местные новости и важные объявления.</p>
+</div>
+
+<div class="news">
+<h3>Что нового в районе?</h3>
+<p>Новые заведения, мероприятия и полезная информация.</p>
+</div>
+</section>
+
+<section id="guide">
+<h2>🗺️ Туристический гид</h2>
+
+<div class="grid">
+<div class="card">
+<h3>📍 Интересные места</h3>
+<p>Места, которые стоит посетить.</p>
+</div>
+
+<div class="card">
+<h3>🍴 Где поесть</h3>
+<p>Рестораны, кафе и другие заведения.</p>
+</div>
+
+<div class="card">
+<h3>🏨 Где остановиться</h3>
+<p>Отели и варианты размещения.</p>
+</div>
+</div>
+</section>
+
+<section id="contacts" class="contact">
+<h2>📞 Контакты</h2>
+<p>Хотите добавить своё заведение, событие или новость?</p>
+<p>Свяжитесь с администрацией Shanghai City.</p>
+</section>
+
+<footer>
+<p>© 2026 Shanghai City</p>
+<p>Местный городской портал</p>
+</footer>
+
+<script>
+function searchSite(){
+let text=document.getElementById("searchInput").value;
+if(text.trim()===""){
+alert("Введите запрос для поиска");
+}else{
+alert("Поиск: "+text);
+}
+}
+
+function setLang(lang){
+if(lang==="ru"){
+document.getElementById("title").innerText="Shanghai City";
+document.getElementById("subtitle").innerText="Местный городской портал: заведения, события, новости и полезная информация.";
+}
+if(lang==="en"){
+document.getElementById("title").innerText="Shanghai City";
+document.getElementById("subtitle").innerText="Local city portal: places, events, news and useful information.";
+}
+if(lang==="tj"){
+document.getElementById("title").innerText="Shanghai City";
+document.getElementById("subtitle").innerText="Портали маҳаллӣ: ҷойҳо, чорабиниҳо, хабарҳо ва маълумоти муфид.";
+}
+}
+</script>
+
+</body>
+</html>
